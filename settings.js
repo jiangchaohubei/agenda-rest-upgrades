@@ -1,0 +1,44 @@
+let dbname = process.env.DB_NAME || 'agenda';
+let dbhost = process.env.DB_HOST || 'localhost';
+let collection = 'agendaJobs';
+let definitions = 'jobDefinitions';
+let timeout = 5000;
+
+const settings = {
+  get agendaMongoUrl() {
+    //return `mongodb://root:0o3ei8ujfmc@10.9.107.130:27017/agenda?authSource=admin&authMechanism=SCRAM-SHA-1`;
+    return `mongodb://127.0.0.1:27017/agenda`;
+  },
+  get dbname() {
+    return dbname;
+  },
+  set dbname(value) {
+    dbname = value;
+  },
+  get dbhost() {
+    return dbhost;
+  },
+  set dbhost(value) {
+    dbhost = value;
+  },
+  get collection() {
+    return collection;
+  },
+  set collection(value) {
+    collection = value;
+  },
+  get definitions() {
+    return definitions;
+  },
+  set definitions(value) {
+    definitions = value;
+  },
+  get timeout() {
+    return timeout;
+  },
+  set timeout(value) {
+    timeout = value;
+  }
+};
+
+module.exports = settings;
