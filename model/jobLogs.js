@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import './mongo'
 const Schema=mongoose.Schema;
 
-let jobLogsSchema=new Schema({
+const jobLogsSchema=new Schema({
   "jobName":{type:String},
   "status":String,
   "runAt":{type:Date,default:new Date()},
@@ -11,4 +11,4 @@ let jobLogsSchema=new Schema({
 
 })
 
-module.exports=mongoose.model('jobLogs',jobLogsSchema);
+export default mongoose.model('jobLogs',jobLogsSchema);
